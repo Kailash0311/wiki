@@ -239,7 +239,7 @@ module.exports = function (passport) {
           name: 'Guest',
           password: '',
           rights: [{
-            role: 'read',
+            role: (appconfig.defEditor? 'write': 'read'),
             path: '/',
             exact: false,
             deny: !appconfig.public

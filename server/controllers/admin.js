@@ -152,7 +152,7 @@ router.post('/users/create', (req, res) => {
       }
 
       nUsr.rights = [{
-        role: 'read',
+        role: (appconfig.defEditor? 'write': 'read'),
         path: '/',
         exact: false,
         deny: false

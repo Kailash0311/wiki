@@ -330,6 +330,8 @@ module.exports = (port, spinner) => {
         }
         conf.lang = req.body.lang
         conf.public = (req.body.public === true)
+        conf.defEditor=(req.body.defEditor === true)
+
         if (conf.auth && conf.auth.local) {
           conf.auth.local = { enabled: true }
         } else {

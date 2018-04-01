@@ -111,6 +111,10 @@ html(data-logic='configure')
                       input#ipt-public(type='checkbox', v-model='conf.public', data-vv-scope='general', name='ipt-public')
                       label.label(for='ipt-public') Public Access
                       span.desc Should the site be accessible (read only) without login.
+                    p.control.is-fullwidth 
+                      input#ipt-defEditor(type='checkbox',v-model='conf.defEditor',data-vv-scope='general',name='ipt-defEditor')
+                      label.label(for='ipt-defEditor') Default Editor
+                      span.desc Should the user be editor by Default (Read and Edit the Documents)
                 .panel-footer
                   .progress-bar: div(v-bind:style='{width: currentProgress}')
                   button.button.is-light-blue.is-outlined(v-on:click='proceedToSyscheck', v-bind:disabled='loading') Back
