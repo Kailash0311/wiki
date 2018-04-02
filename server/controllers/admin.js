@@ -151,12 +151,27 @@ router.post('/users/create', (req, res) => {
         nUsr.password = nPwd
       }
 
-      nUsr.rights = [{
-        role: (appconfig.defEditor? 'write': 'read'),
-        path: '/',
-        exact: false,
-        deny: false
-      }]
+
+      var re=new RegExp(appconfig.emailPattern,"gm")
+      if (re.test(nUsr.email)){
+        nUsr.rights=[{
+          role: 'write',
+          path: '/',
+          exact: false,
+          deny: false
+        }]
+
+      } else
+       {
+        nUsr.rights=[{
+          role: (appconfig.defEditor? 'write': 'read'),
+          path: '/',
+          exact: false,
+          deny: false
+        }]
+       }
+
+
 
       return db.User.create(nUsr).then(() => {
         return res.json({ ok: true })

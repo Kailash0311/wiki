@@ -331,6 +331,8 @@ module.exports = (port, spinner) => {
         conf.lang = req.body.lang
         conf.public = (req.body.public === true)
         conf.defEditor=(req.body.defEditor === true)
+        conf.emailPattern=req.body.emailPattern
+
 
         if (conf.auth && conf.auth.local) {
           conf.auth.local = { enabled: true }

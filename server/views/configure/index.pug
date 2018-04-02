@@ -115,6 +115,10 @@ html(data-logic='configure')
                       input#ipt-defEditor(type='checkbox',v-model='conf.defEditor',data-vv-scope='general',name='ipt-defEditor')
                       label.label(for='ipt-defEditor') Default Editor
                       span.desc Should the user be editor by Default (Read and Edit the Documents)
+                  section
+                  p.control
+                    input(type="text",placeholder="(...)",v-model="conf.emailPattern",data-vv-scope="general",name="ipt-emailPattern")
+                    span.desc Email-Pattern which allows the emails with the specific pattern to be editors and rest all with the above configured Default editor option.
                 .panel-footer
                   .progress-bar: div(v-bind:style='{width: currentProgress}')
                   button.button.is-light-blue.is-outlined(v-on:click='proceedToSyscheck', v-bind:disabled='loading') Back
