@@ -148,6 +148,24 @@ router.use((req, res, next) => {
     next()
   }
 })
+router.use((req,res,next)=>{
+  if(_.endsWith(req.url,'/editors')){
+db.User.find({"rights.role":'write'},(err,item)=>{
+  if(err)
+  {
+    res.render('error',{
+      message:err.message,
+      error:{}
+    })
+  }
+  if(item){
+    res.render('pages/editors',{editors:item});
+  }
+})
+
+}else {
+  next()
+}})
 
 // ==========================================
 // VIEW MODE

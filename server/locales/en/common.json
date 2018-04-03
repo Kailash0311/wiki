@@ -37,7 +37,8 @@
     "syssettings": "System Settings",
     "theme": "Color Theme",
     "users": "Users",
-    "viewlatest": "View Latest"
+    "viewlatest": "View Latest",
+    "editors":"Editors"
   },
   "welcome": {
     "title": "Welcome to your wiki!",
